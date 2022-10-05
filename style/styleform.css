@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    color: azure;
+
+}.textbox {
+height: 28px;
+width: 200px;
+padding: 0 10px;  
+
+margin: 4px 6px;
+font-size: 17px;
+border-radius: 5px;
+outline-style: none;
+text-align: left !important;
+
+
+
+}
+
+ 
