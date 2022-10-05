@@ -9,6 +9,7 @@
                 else if(session.getAttribute("type").equals("admin")){
                 session.setAttribute("userId",session.getAttribute("userId"));
                 }
+         
          %>
         <!DOCTYPE html>
         <html lang="en">
