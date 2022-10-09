@@ -17,7 +17,7 @@
                 <table>
                     <tr>
                         <td>
-                            userId:
+                            UserId:
                         </td>
                         <td>
                             <input type="text" class="textbox" name="userId" placeholder="enter your user id">
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <td>
-                            password:
+                            Password:
                         </td>
                         <td>
                             <input type="password" class="textbox" name="password" placeholder="enter password">

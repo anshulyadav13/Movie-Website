@@ -6,7 +6,7 @@
     
         <style>
             body {
-                color: lightgray;
+                color: #4dbf00;
                 font-family: sans-serif;
 
             }
@@ -22,7 +22,7 @@
             .movieimg {
                 margin-top: 50px;
                 width: 560px;
-                height: 650px;
+                height: 700px;
 
             }
 
@@ -34,7 +34,7 @@
                 text-align: center;
                 margin: auto;
                 margin-top: 10px;
-                color: goldenrod;
+                color: #4dbf00;
             }
 
             .moviedesc,
@@ -43,7 +43,7 @@
                 font-size: 20px;
                 font-weight: bold;
                 width: 100%;
-                /* margin: auto ; */
+          
                 margin: 15px auto;
 
             }
@@ -56,7 +56,7 @@
                 background-color: #ffffff;
                 padding: 5px 15px;
                 font-weight: lighter;
-                color: rgb(10, 10, 10);
+                color: red;
                 border: 1px solid black;
                 border-radius: 9px;
 
@@ -64,17 +64,14 @@
 
             table,
             tr {
-                /* border: 1px solid rgb(36, 35, 35);
-                border-radius: 8px; */
+             
                 width: 100%;
                 margin: auto;
             }
 
-            /* table {
-                border-collapse: collapse;
-            } */
+            
             textarea {
-
+                outline:none;
                 background-color: #d0e2bc;
                 color: rgb(0, 0, 0);
                 margin: 0;
@@ -123,6 +120,9 @@
                     <span class="movietitle">
                         <%= rs.getString(2) %>
                     </span>
+                    <!-- <%=rs.getString(4)%> -->
+                    <br>
+                    <span ><a style="color: red !important; font-size:22px" href="<%=rs.getString(5)%>">Click Here to Watch video</a></span>
                     <title><%= rs.getString(2) %></title>
 
                     <p class="moviedesc">
@@ -138,7 +138,7 @@
                                 <table class="movielist">
                                     <tr>
                                         <th>
-                                            <span style="font-weight:lighter ;color: rgb(231, 231, 123);">
+                                            <span style="font-weight:lighter ;color: #4dbf00;">
                                                 <%= rs2.getString(1) %> :
                                             </span>
                                         </th>
