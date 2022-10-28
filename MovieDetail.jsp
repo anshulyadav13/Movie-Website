@@ -13,16 +13,17 @@
 
             .movielist {
                 display: block;
-                width: 700px;
-                margin: auto;
+                width: auto;
+                margin-left:30% ;
+                margin-right:30% ;
                 font-size: 17px;
-                text-align: center;
+               
             }
 
             .movieimg {
                 margin-top: 50px;
-                width: 560px;
-                height: 700px;
+                width: 600px;
+                height: 850px;
 
             }
 
@@ -31,10 +32,10 @@
                 font-size: 20px;
                 font-weight: bold;
                 width: 100%;
-                text-align: center;
-                margin: auto;
-                margin-top: 10px;
-                color: #4dbf00;
+               
+                margin: 25px auto;
+              
+                color: #fbff00;
             }
 
             .moviedesc,
@@ -51,12 +52,15 @@
             .moviecomments {
                 position: relative;
                 width: 250px;
+                font-family: 'Times New Roman', Times, serif;
                 height: 40px;
+                display: inline-block;
+                margin-top:0;
                 font-size: 16px;
                 background-color: #ffffff;
-                padding: 5px 15px;
-                font-weight: lighter;
-                color: red;
+                padding: 5px 20px;
+             
+                color:  black;
                 border: 1px solid black;
                 border-radius: 9px;
 
@@ -75,11 +79,35 @@
                 background-color: #d0e2bc;
                 color: rgb(0, 0, 0);
                 margin: 0;
+                padding: 3px 10px;
                 border: 1px solid red;
                 border-radius: 5px;
                 font-size: 17px;
 
 
+            }
+            .centered-div{
+                text-align: center;
+                
+            }
+            .hidden-delete-comment{
+                display: inline;
+                 float: right;
+                 /* visibility: hidden; */
+                 margin: 0 2px 5px auto;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                font-weight: bold;
+
+            }
+            .hidden-delete-comment:hover{
+               
+                 
+                background-color: red;
+          
             }
         </style>
 </head>
@@ -122,7 +150,7 @@
                     </span>
                     <!-- <%=rs.getString(4)%> -->
                     <br>
-                    <span ><a style="color: red !important; font-size:22px" href="<%=rs.getString(5)%>">Click Here to Watch video</a></span>
+                    <span ><a style="color: red !important; font-size:22px" href="./videos/video1.mp4">Click Here to Watch video</a></span>
                     <title><%= rs.getString(2) %></title>
 
                     <p class="moviedesc">
@@ -132,41 +160,52 @@
                 </div>
 
 
-                <% } %> <span class="movietitle">Comments<span>
-                            <% rs2=ins.executeQuery(str2); while(rs2.next()){ %>
+                <% } %> <center><span class="movietitle">Comments<span></center>
+                            <% rs2=ins.executeQuery(str2); while(rs2.next()){ 
 
+                                
+                                %>
+                                    
                                 <table class="movielist">
                                     <tr>
-                                        <th>
-                                            <span style="font-weight:lighter ;color: #4dbf00;">
-                                                <%= rs2.getString(1) %> :
+                                        <th style="text-align:left ;">
+                                            <span style="font-weight:lighter ;margin-bottom:1px ; margin-top:8px ;display:inline-block;color:red;">
+                                                <%= rs2.getString(1) %>
                                             </span>
-                                        </th>
-                                        <th>
-                                            <span class="moviecomments">
+                                        </th>  </tr>    <tr>
+                                        <td>
+                                            <span class="moviecomments" >
                                                 <%= rs2.getString(3) %>
+                                                
+                                                <form action="DeleteCommentBackend.jsp">
+                                                    <input type="hidden" name="deletecommentuserid" value="<%= rs2.getString(1) %>">
+                                                    <input type="hidden" name="deletecomment" value="<%= rs2.getString(3) %>">
+                                                    <% 
+                                                
+                                                    if(session.getAttribute("userId")!=null && rs2.getString(1).equals(session.getAttribute("userId"))){ %>
+                                                <button class="hidden-delete-comment" type="submit">Delete</button> <% } %>
+                                            </form>
                                             </span>
-                                        </th>
-                                    </tr>
+                                        </td></tr>
+                                   
 
                                 </table>
 
                                 <% } session.setAttribute("title",movieTitle);
                                     session.setAttribute("userId",session.getAttribute("userId")); %>
-                                    <div>
+                                    <div class="centered-div">
                                         <form method="post" action="AddCommentBackend.jsp">
                                             <table>
                                                 <tr>
 
-                                                    <td>
+                                                    <td style="display: inline-block;" >
                                                         <textarea class="textarea" placeholder="Add your Comment here"
                                                             name="comment" rows="4" cols="40"></textarea>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span>Add Comment:</span>
-                                                        <input class="button" type="submit" value="Submit">
+                                                 
+                                                    <td style="display: inline-block;" >
+                                                      
+                                                        <input class="button" style="display: inline-block;margin-left: 10px !important;" type="submit" value="Submit">
 
 
                                                     </td>

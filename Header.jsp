@@ -24,7 +24,7 @@
 
                     <div class="logo-container">
                         <a href="index.jsp">
-                            <h1 class="logo">Movies<sup style="font-size:11px; color: red;">Time</sup></h1>
+                            <h1 class="logo">Movies<sup style="font-size:9px; color: red;">Time</sup></h1>
                         </a>
                     </div>
                     <div class="menu-container">
