@@ -21,7 +21,7 @@
             }
 
             .movieimg {
-                margin-top: 50px;
+                margin-top: 30px;
                 width: 600px;
                 height: 850px;
 
@@ -30,19 +30,20 @@
             .movietitle {
                 display: block;
                 font-size: 20px;
-                font-weight: bold;
+                /* font-weight: bold; */
                 width: 100%;
                
-                margin: 25px auto;
+                margin:  10px auto;
+                margin-bottom: 0;
               
-                color: #fbff00;
+                color: #ffffff;
             }
 
             .moviedesc,
             .moviecomments {
                 display: block;
                 font-size: 20px;
-                font-weight: bold;
+                /* font-weight: bold; */
                 width: 100%;
           
                 margin: 15px auto;
@@ -51,19 +52,20 @@
 
             .moviecomments {
                 position: relative;
-                width: 250px;
+                width: auto;
+                max-width: 600px;
                 font-family: 'Times New Roman', Times, serif;
-                height: 40px;
+                min-height: 28px;
                 display: inline-block;
                 margin-top:0;
-                font-size: 16px;
+                font-size: 18px;
                 background-color: #ffffff;
                 padding: 5px 20px;
              
                 color:  black;
                 border: 1px solid black;
                 border-radius: 9px;
-
+                
             }
 
             table,
@@ -76,13 +78,14 @@
             
             textarea {
                 outline:none;
-                background-color: #d0e2bc;
+                background-color: #f7f2c1;
                 color: rgb(0, 0, 0);
                 margin: 0;
                 padding: 3px 10px;
                 border: 1px solid red;
-                border-radius: 5px;
+                border-radius: 8px;
                 font-size: 17px;
+                max-width: 600px;
 
 
             }
@@ -95,12 +98,13 @@
                  float: right;
                  /* visibility: hidden; */
                  margin: 0 2px 5px auto;
-                color: white;
+                color: rgb(185, 177, 177);
                 padding: 5px 10px;
                 border-radius: 10px;
                 border: none;
+                cursor: pointer;
                 outline: none;
-                font-weight: bold;
+                /* font-weight: bold; */
 
             }
             .hidden-delete-comment:hover{
@@ -144,10 +148,9 @@
                 rs=ins.executeQuery(str); while(rs.next()){ %>
 
                 <div class="movielist">
+                    <center><span class="movietitle"> &nbsp; &nbsp;    <%= rs.getString(2) %> </span></center>
                     <img class="movieimg" src="<%=rs.getString(1) %>" alt="">
-                    <span class="movietitle">
-                        <%= rs.getString(2) %>
-                    </span>
+                   
                     <!-- <%=rs.getString(4)%> -->
                     <br>
                     <span ><a style="color: red !important; font-size:22px" href="./videos/video1.mp4">Click Here to Watch video</a></span>
@@ -165,18 +168,23 @@
 
                                 
                                 %>
-                                    
+                              <center>      
                                 <table class="movielist">
                                     <tr>
                                         <th style="text-align:left ;">
                                             <span style="font-weight:lighter ;margin-bottom:1px ; margin-top:8px ;display:inline-block;color:red;">
-                                                <%= rs2.getString(1) %>
+                                              <%= rs2.getString(1) %>
                                             </span>
-                                        </th>  </tr>    <tr>
+                                        </th> <th></th> </tr>    <tr>
                                         <td>
                                             <span class="moviecomments" >
                                                 <%= rs2.getString(3) %>
                                                 
+                                                  
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span>
                                                 <form action="DeleteCommentBackend.jsp">
                                                     <input type="hidden" name="deletecommentuserid" value="<%= rs2.getString(1) %>">
                                                     <input type="hidden" name="deletecomment" value="<%= rs2.getString(3) %>">
@@ -190,17 +198,17 @@
                                    
 
                                 </table>
-
+                            </center>
                                 <% } session.setAttribute("title",movieTitle);
                                     session.setAttribute("userId",session.getAttribute("userId")); %>
-                                    <div class="centered-div">
+                                                                      <div class="centered-div">
                                         <form method="post" action="AddCommentBackend.jsp">
-                                            <table>
+                                           <table>
                                                 <tr>
-
+                                                    
                                                     <td style="display: inline-block;" >
-                                                        <textarea class="textarea" placeholder="Add your Comment here"
-                                                            name="comment" rows="4" cols="40"></textarea>
+                                                       <textarea class="textarea" placeholder="Add your Comment here"
+                                                            name="comment" rows="4" cols="40"></textarea> 
                                                     </td>
                                                  
                                                     <td style="display: inline-block;" >
@@ -213,8 +221,9 @@
 
                                             </table>
                                         </form>
-
+                                
                                     </div>
+ 
                                     <% con.close(); } catch (Exception e){  
                                         
 

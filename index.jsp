@@ -8,6 +8,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>Movies-Time</title>
+    
 </head>
 
 <body>
@@ -20,7 +21,7 @@
                     alert(e);
                 </script>
                 <%} session.setAttribute("message", null); %>
-
+                 
 </body>
 
 </html>

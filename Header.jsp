@@ -29,11 +29,11 @@
                     </div>
                     <div class="menu-container">
                         <ul class="menu-list">
-                            <li class="menu-list-item active"><a href="index.jsp">Home</a></li>
+                            <li class="menu-list-item active home"><a href="index.jsp">Home</a></li>
 
-                            <li class="menu-list-item"><a href="Anime.jsp">Anime</a></li>
+                            <li class="menu-list-item anime"><a href="Anime.jsp">Anime</a></li>
 
-                            <li class="menu-list-item"><a href="Trends.jsp">Trends</a></li>
+                            <li class="menu-list-item trends"><a href="Trends.jsp">Trends</a></li>
                             <% session.setAttribute("type",session.getAttribute("type"));
                                 if(session.getAttribute("userId")==null || session.getAttribute("type")==null)
                                  {} 
@@ -68,6 +68,8 @@
                     </div>
                 </div>
             </div>
+
+            
 </body>
 
 </html>

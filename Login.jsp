@@ -53,7 +53,7 @@
                             </td>
                         </tr>
                     </table>
-                    <a href="RegisterUser.jsp"> New User Create account Now</a>
+                    <a class="cereate_acc_text"href="RegisterUser.jsp"> New User Create Account </a>
 
 
 

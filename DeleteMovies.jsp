@@ -50,7 +50,7 @@
                     <table>
                         <caption>Movie Table </caption>
                         <tr>
-                            <th>URL</th>
+                            <!-- <th>URL</th> -->
                             <th>TITLE</th>
                             <th>DISCRIPTION</th>
 
@@ -63,9 +63,9 @@
                             ins=con.createStatement(); String str="select * from moviedetails" ;
                             rs=ins.executeQuery(str); while(rs.next()){ %>
                             <tr>
-                                <td class="movieTitle">
+                                <!-- <td class="movieTitle">
                                     <%=rs.getString(1)%>
-                                </td>
+                                </td> -->
 
                                 <td class="movieTitle">
                                     <%=rs.getString(2)%>

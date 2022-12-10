@@ -35,7 +35,7 @@
     }%>
     <script>alert("Account Created");</script><%
     
-   response.sendRedirect("index.jsp");
+   response.sendRedirect("Login.jsp");
   }
   else{
     %>
