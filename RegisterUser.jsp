@@ -40,14 +40,12 @@
                         </td>
                     </tr>
                     <tr>
+                     
                         <td>
-                            Select Type:
-                        </td>
-                        <td>
-                            <select name="type">
-                                <option selected>Select</option>
-                                <option value="user">User</option>
-                            </select>
+                           
+                               
+                                <input type="hidden" name="type" value="user">
+                         
                         </td>
                     </tr>
                     <tr>

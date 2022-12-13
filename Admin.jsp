@@ -92,13 +92,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Select Type:
-                                </td>
-                                <td>
-                                    <select name="type">
-                                        <option selected>Select</option>
-                                        <option value="admin">admin</option>
-                                    </select>
+                                 
+                                        <input type="hidden" name="type" value="admin"> 
+                          
                                 </td>
                             </tr>
                             <tr>

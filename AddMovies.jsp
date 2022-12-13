@@ -53,7 +53,7 @@
                                 MovieCatagory:
                             </td>
                             <td>
-                                <select name="catagory">
+                                <select class="catagory-selector" name="catagory">
                                     <option selected>Select</option>
                                     <option value="New Release">New Release</option>
                                     <option value="TRENDING">TRENDING</option>
