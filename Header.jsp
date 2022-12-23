@@ -52,7 +52,7 @@
                             <% if((String)session.getAttribute("userId")==null)
                              { 
                                 %> 
-                                <span class="login"><a href="Login.jsp">Log In</a></span>
+                                <span class="login"  id="login-button">Log In</span>
                                 <% } 
                                 else{
                                     %>
@@ -68,6 +68,62 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="login-box "> -->
+                <div class="login-box-main toggleit" id="toggle-it">
+                   
+                        <div class="loginform">
+                            <form method="post" action="LoginBackend.jsp">
+                                <h2 style="width: 145px;margin:auto">Log IN</h3> <br><br>
+                                    <table>
+                
+                
+                                        <tr>
+                                            <th>
+                                                User Id:
+                                                </td>
+                                            <th>
+                                                <input class="textbox" placeholder="userid" type="text" name="userId">
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Password:
+                                                </td>
+                                            <th>
+                                                <input type="password" placeholder="password" class="textbox" name="password">
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <input class="button" type="submit" value="Login">
+                                                </td>
+                                            <th>
+                                                <input type="reset" class="button" name="Reset">
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td><br>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <a class="cereate_acc_text"href="RegisterUser.jsp"> New User Create Account </a>
+                
+                
+                
+                
+                            </form>
+                </div>
+                </div>
+
+            <!-- </div> -->
+            <script>
+                loginButton=document.getElementById("login-button");
+                toggleIt=document.getElementById("toggle-it");
+                loginButton.addEventListener("click",login);
+                function login(){
+                    toggleIt.classList.toggle("toggleit");
+                }
+            </script>
 
             
 </body>

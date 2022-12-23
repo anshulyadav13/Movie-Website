@@ -41,7 +41,7 @@
                         </tr>
                         <tr>
                             <td>
-                                discription:
+                                Discription:
                             </td>
                             <td>
                                 <input type="text" name="discription" class="textbox" placeholder="Movie Details ">

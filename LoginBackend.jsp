@@ -55,7 +55,7 @@
         }
         if(flag==0){
 
-            response.sendRedirect("Login.jsp");
+            response.sendRedirect("index.jsp");
         }
 
  %>

@@ -23,7 +23,7 @@
             .movieimg {
                 margin-top: 30px;
                 width: 600px;
-                height: 850px;
+                
 
             }
 
