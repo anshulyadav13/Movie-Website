@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="./style/styleform.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
         rel="stylesheet">
