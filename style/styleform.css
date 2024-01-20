@@ -7,6 +7,9 @@ body {
     color: azure;
 
 }
+html{
+    scroll-behavior: smooth;
+  }
 .textbox {
 height: 28px;
 width: 200px;
